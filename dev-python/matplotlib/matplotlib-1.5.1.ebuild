@@ -11,7 +11,8 @@ inherit distutils-r1 eutils flag-o-matic multiprocessing virtualx toolchain-func
 
 DESCRIPTION="Pure python plotting library with matlab like syntax"
 HOMEPAGE="http://matplotlib.org/"
-SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_URI="https://github.com/matplotlib/${PN}/archive/v${PV}.tar.gz"
+#SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 SLOT="0"
 # Main license: matplotlib
