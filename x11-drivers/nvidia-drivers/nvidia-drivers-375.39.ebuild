@@ -189,6 +189,7 @@ src_compile() {
 	# on FreeBSD there's one and triggers the kernel module build, as we install
 	# it by itself, pass this.
 
+	export IGNORE_PREEMPT_RT_PRESENCE=true
 	cd "${NV_SRC}"
 	if use kernel_FreeBSD; then
 		MAKE="$(get_bmake)" CFLAGS="-Wno-sign-compare" emake CC="$(tc-getCC)" \
@@ -217,6 +218,8 @@ src_compile() {
 			NV_VERBOSE=1 \
 			DO_STRIP=
 	fi
+
+	unset IGNORE_PREEMPT_RT_PRESENCE
 }
 
 # Install nvidia library:
